@@ -1,4 +1,5 @@
 <div class="card">
+ <% if user_signed_in? %>
   <%= link_to prototype_path(prototype.id),method: :get do %>
     <%= image_tag prototype.image, class: :card__img %>
   <% end %>
@@ -9,4 +10,5 @@
     </p>
     <%= link_to "by #{prototype.user.name}", user_path(prototype.user_id), class: :card__user %>
   </div>
+ <% end %>
 </div>
